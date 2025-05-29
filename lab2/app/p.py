@@ -185,7 +185,6 @@ def main():
     product_df.write.jdbc(url=pg_url, table="dim_product", mode="append", properties=properties)
     print(f"Inserted {product_df.count()} products")
 
-    # Загрузка дополнительных таблиц для dim_pet
     dim_customer = spark.read.jdbc(url=pg_url, table="dim_customer", properties=properties)
 
     # dim_pet

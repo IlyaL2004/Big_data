@@ -3,7 +3,6 @@ from pyspark.sql import functions as F
 
 
 def write_to_clickhouse(df, table):
-    # Явно указываем параметры создания таблицы
     df.write \
         .format("jdbc") \
         .option("driver", "com.clickhouse.jdbc.ClickHouseDriver") \
@@ -27,8 +26,8 @@ def main():
     properties = {
         "user": "admin",
         "password": "admin",
-        "driver": "org.postgresql.Driver",  # Явное указание драйвера
-        "fetchsize": "10000"  # Для оптимизации больших запросов
+        "driver": "org.postgresql.Driver",
+        "fetchsize": "10000"
     }
 
     # Список таблиц для чтения

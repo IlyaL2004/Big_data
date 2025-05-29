@@ -1,0 +1,2 @@
+docker exec spark-master spark-submit --master spark://spark-master:7077 --jars /jars/postgresql-42.6.0.jar /app/p.py
+docker exec spark-master spark-submit --master spark://spark-master:7077 --jars /jars/postgresql-42.6.0.jar,/jars/clickhouse-jdbc-0.4.6-all.jar /app/pp.py
